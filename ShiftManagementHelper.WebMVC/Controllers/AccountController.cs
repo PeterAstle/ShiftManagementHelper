@@ -8,6 +8,7 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using ShiftManagementHelper.WebMVC.Data;
 using ShiftManagementHelper.WebMVC.Models;
 
 namespace ShiftManagementHelper.WebMVC.Controllers

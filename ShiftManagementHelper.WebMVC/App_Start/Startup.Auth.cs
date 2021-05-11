@@ -5,6 +5,7 @@ using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
+using ShiftManagementHelper.WebMVC.Data;
 using ShiftManagementHelper.WebMVC.Models;
 
 namespace ShiftManagementHelper.WebMVC

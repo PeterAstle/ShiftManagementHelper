@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShiftManagementHelper.Data
 {
-    public class Class1
+    public class Shift
     {
     }
 }
