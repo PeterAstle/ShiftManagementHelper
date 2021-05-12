@@ -61,6 +61,9 @@ namespace ShiftManagementHelper.WebMVC.Controllers
             return View(model);
         }
 
+        // GET: Details
+        // Worker/Details/{id}
+
         public ActionResult Details(int id)
         {
             var service = CreateWorkerService();

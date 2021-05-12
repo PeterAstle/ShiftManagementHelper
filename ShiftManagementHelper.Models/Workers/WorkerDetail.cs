@@ -13,7 +13,7 @@ namespace ShiftManagementHelper.Models.Workers
         public string WorkerFirstName { get; set; }
         public string WorkerLastName { get; set; }
         public DateTimeOffset EmploymentStartDate { get; set; }
-        public TimeSpan EmploymentLength { get; set; }
+        //public TimeSpan EmploymentLength { get; set; }
         public WorkerRole Role { get; set; }
         public string Notes { get; set; }
     }

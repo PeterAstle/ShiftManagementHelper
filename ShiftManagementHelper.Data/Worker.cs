@@ -17,10 +17,9 @@ namespace ShiftManagementHelper.Data
         public string WorkerFirstName { get; set; }
         [Required]
         public string WorkerLastName { get; set; }
-        public string WorkerFullName { get { return WorkerFirstName + " " + WorkerLastName; }
-        }
+        
         public DateTimeOffset EmploymentStartDate { get; set; }
-        public TimeSpan EmploymentLength { get { return EmploymentStartDate - DateTimeOffset.Now; } }
+      
         [Required]
         public WorkerRole Role { get; set; }
         public string Notes { get; set; }

@@ -51,8 +51,8 @@ namespace ShiftManagementHelper.Services
                        new WorkerListItem
                        {
                            WorkerId = e.WorkerId,
-                           WorkerFullName = e.WorkerFullName,
-                           EmploymentLength = e.EmploymentLength,
+                           WorkerFirstName = e.WorkerFirstName,
+                           WorkerLastName = e.WorkerLastName,
                            Role = e.Role
                        }
                         );
@@ -77,7 +77,6 @@ namespace ShiftManagementHelper.Services
                         WorkerFirstName = entity.WorkerFirstName,
                         WorkerLastName = entity.WorkerLastName,
                         EmploymentStartDate = entity.EmploymentStartDate,
-                        EmploymentLength = entity.EmploymentLength,
                         Role = entity.Role,
                         Notes = entity.Notes
                     };
@@ -121,5 +120,16 @@ namespace ShiftManagementHelper.Services
             }
         }
 
+        //private TimeSpan TimeServed(DateTimeOffset date)
+        //{
+        //    TimeSpan lengthOfTime = DateTimeOffset.Now - date;
+        //    return lengthOfTime;
+        //}
+
+        //private string ConnectNames(string firstName, string lastName)
+        //{
+        //    string FullName = $"{firstName} {lastName}";
+        //    return FullName;
+        //}
     }
 }
