@@ -243,11 +243,15 @@
     <Content Include="Views\Worker\Details.cshtml" />
     <Content Include="Views\Worker\Edit.cshtml" />
     <Content Include="Views\Worker\Delete.cshtml" />
+    <Content Include="Views\Position\Index.cshtml" />
+    <Content Include="Views\Position\Create.cshtml" />
+    <Content Include="Views\Position\Details.cshtml" />
+    <Content Include="Views\Position\Edit.cshtml" />
+    <Content Include="Views\Position\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\PositionAssignment\" />
-    <Folder Include="Views\Position\" />
     <Folder Include="Views\Shift\" />
   </ItemGroup>
   <ItemGroup>
