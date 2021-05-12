@@ -264,6 +264,14 @@
       <Project>{AD75F33A-597B-4050-AC13-C4B1A17CD979}</Project>
       <Name>ShiftManagementHelper.Data</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ShiftManagementHelper.Models\ShiftManagementHelper.Models.csproj">
+      <Project>{B31A40BA-601E-456D-89E3-1FCFEBE860F1}</Project>
+      <Name>ShiftManagementHelper.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShiftManagementHelper.Services\ShiftManagementHelper.Services.csproj">
+      <Project>{9CA36167-7143-480A-A374-4C2D08A208F5}</Project>
+      <Name>ShiftManagementHelper.Services</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
