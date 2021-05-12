@@ -14,7 +14,7 @@ namespace ShiftManagementHelper.Data
         [Required]
         public string ShiftName { get; set; }
         public Guid OwnerId { get; set; }
-        public ICollection<PositionAssignment> PositionAssignments { get; set; }
+        public List<PositionAssignment> PositionAssignments { get; set; } = new List<PositionAssignment>();
         public DateTimeOffset Date { get; set; }
         public string Notes { get; set; }
     }

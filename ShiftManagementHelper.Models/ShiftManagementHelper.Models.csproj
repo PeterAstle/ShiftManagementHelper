@@ -60,5 +60,11 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="PositionAssignments\" />
+    <Folder Include="Positions\" />
+    <Folder Include="Shifts\" />
+    <Folder Include="Workers\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
