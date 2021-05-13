@@ -1,0 +1,50 @@
+﻿@model ShiftManagementHelper.Models.PositionAssignments.PositionAssignmentDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>PositionAssignmentDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.PositionAssignmentId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PositionAssignmentId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PositionId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PositionId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

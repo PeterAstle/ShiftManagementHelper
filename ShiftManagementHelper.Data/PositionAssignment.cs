@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace ShiftManagementHelper.Data
 {
-   public class PositionAssignment
+    public class PositionAssignment
     {
         [Key]
-        public int ShiftPositionId { get; set; }
+        public int PositionAssignmentId { get; set; }
         [ForeignKey(nameof(Position))]
         public int PositionId { get; set; }
         public virtual Position Position { get; set; }
@@ -20,6 +20,7 @@ namespace ShiftManagementHelper.Data
         public virtual Worker Worker { get; set; }
         public Guid OwnerId { get; set; }
         public string Notes { get; set; }
+
 
     }
 }

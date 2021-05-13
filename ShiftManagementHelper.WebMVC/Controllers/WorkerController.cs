@@ -119,7 +119,7 @@ namespace ShiftManagementHelper.WebMVC.Controllers
                 return RedirectToAction("Index");
             }
 
-            ModelState.AddModelError("", "This Worker has not been updated successfully.");
+            ModelState.AddModelError("", "This Worker has NOT been updated successfully.");
             return View();
 
         }

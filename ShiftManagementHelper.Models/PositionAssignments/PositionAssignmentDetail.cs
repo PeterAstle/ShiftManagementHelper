@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShiftManagementHelper.Data;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,11 @@ namespace ShiftManagementHelper.Models.PositionAssignments
 {
     public class PositionAssignmentDetail
     {
-
+        public int PositionAssignmentId { get; set; }
+        public int PositionId { get; set; }
+     
+        public int WorkerId { get; set; }
+     
+        public string Notes { get; set; }
     }
 }
