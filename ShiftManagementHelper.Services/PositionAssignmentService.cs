@@ -20,19 +20,25 @@ namespace ShiftManagementHelper.Services
 
         public bool CreatePositionAssignment(PositionAssignmentCreate model)
         {
+
+            using (var ctx = new ApplicationDbContext())
+            {
             var entity =
                 new PositionAssignment()
                 {
                     OwnerId = _userId,
                     PositionId = model.PositionId,
-                    //Position = model.Position,
+                    Position = 
+                    ctx
+                    .Positions
+                    .FirstOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId),
                     WorkerId = model.WorkerId,
-                    //Worker = model.Worker,
+                    Worker =
+                    ctx
+                    .Workers
+                    .FirstOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId),
                     Notes = model.Notes
                 };
-
-            using (var ctx = new ApplicationDbContext())
-            {
                 ctx.PositionAssignments.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
@@ -52,7 +58,8 @@ namespace ShiftManagementHelper.Services
                         {
                             PositionAssignmentId = e.PositionAssignmentId,
                             PositionId = e.PositionId,
-                            WorkerId = e.WorkerId
+                            WorkerId = e.WorkerId,
+                            Notes = e.Notes
                         }
                         );
                 return query.ToArray();
@@ -94,6 +101,16 @@ namespace ShiftManagementHelper.Services
                 entity.PositionId = model.PositionId;
                 entity.WorkerId = model.WorkerId;
                 entity.Notes = model.Notes;
+
+               entity.Position =
+                    ctx
+                    .Positions
+                    .FirstOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId);
+                entity.Worker =
+                   ctx
+                   .Workers
+                   .FirstOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId);
+
 
                 return ctx.SaveChanges() == 1;
             }
