@@ -1,0 +1,57 @@
+﻿@model IEnumerable<ShiftManagementHelper.Models.PositionAssignments.PositionAssignmentListItem>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PositionAssignmentId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PositionId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.WorkerId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ShiftId)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Notes)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PositionAssignmentId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PositionId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.WorkerId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ShiftId)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Notes)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.PositionAssignmentId }) |
+            @Html.ActionLink("Details", "Details", new { id = item.PositionAssignmentId }) |
+            @Html.ActionLink("Delete", "Delete", new {  id = item.PositionAssignmentId })
+        </td>
+    </tr>
+}
+
+</table>

@@ -55,6 +55,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IdentityModels.cs" />
+    <Compile Include="Migrations\202105130428107_firstMigration.cs" />
+    <Compile Include="Migrations\202105130428107_firstMigration.Designer.cs">
+      <DependentUpon>202105130428107_firstMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105182033567_changedPAProperties.cs" />
+    <Compile Include="Migrations\202105182033567_changedPAProperties.Designer.cs">
+      <DependentUpon>202105182033567_changedPAProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="PositionAssignment.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -64,6 +73,14 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202105130428107_firstMigration.resx">
+      <DependentUpon>202105130428107_firstMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105182033567_changedPAProperties.resx">
+      <DependentUpon>202105182033567_changedPAProperties.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

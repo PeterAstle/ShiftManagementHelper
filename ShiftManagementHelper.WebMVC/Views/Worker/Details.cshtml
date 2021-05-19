@@ -1,0 +1,58 @@
+﻿@model ShiftManagementHelper.Models.Workers.WorkerDetail
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>WorkerDetail</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkerId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkerId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkerFirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkerFirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.WorkerLastName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.WorkerLastName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EmploymentStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EmploymentStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Notes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Notes)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

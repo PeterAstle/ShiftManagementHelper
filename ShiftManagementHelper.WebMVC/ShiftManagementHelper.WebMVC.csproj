@@ -170,6 +170,10 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PositionAssignmentController.cs" />
+    <Compile Include="Controllers\PositionController.cs" />
+    <Compile Include="Controllers\ShiftController.cs" />
+    <Compile Include="Controllers\WorkerController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -234,6 +238,26 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Worker\Index.cshtml" />
+    <Content Include="Views\Worker\Create.cshtml" />
+    <Content Include="Views\Worker\Details.cshtml" />
+    <Content Include="Views\Worker\Edit.cshtml" />
+    <Content Include="Views\Worker\Delete.cshtml" />
+    <Content Include="Views\Position\Index.cshtml" />
+    <Content Include="Views\Position\Create.cshtml" />
+    <Content Include="Views\Position\Details.cshtml" />
+    <Content Include="Views\Position\Edit.cshtml" />
+    <Content Include="Views\Position\Delete.cshtml" />
+    <Content Include="Views\Shift\Index.cshtml" />
+    <Content Include="Views\Shift\Create.cshtml" />
+    <Content Include="Views\Shift\Details.cshtml" />
+    <Content Include="Views\Shift\Edit.cshtml" />
+    <Content Include="Views\Shift\Delete.cshtml" />
+    <Content Include="Views\PositionAssignment\Create.cshtml" />
+    <Content Include="Views\PositionAssignment\Index.cshtml" />
+    <Content Include="Views\PositionAssignment\Details.cshtml" />
+    <Content Include="Views\PositionAssignment\Edit.cshtml" />
+    <Content Include="Views\PositionAssignment\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -255,6 +279,14 @@
     <ProjectReference Include="..\ShiftManagementHelper.Data\ShiftManagementHelper.Data.csproj">
       <Project>{AD75F33A-597B-4050-AC13-C4B1A17CD979}</Project>
       <Name>ShiftManagementHelper.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShiftManagementHelper.Models\ShiftManagementHelper.Models.csproj">
+      <Project>{B31A40BA-601E-456D-89E3-1FCFEBE860F1}</Project>
+      <Name>ShiftManagementHelper.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ShiftManagementHelper.Services\ShiftManagementHelper.Services.csproj">
+      <Project>{9CA36167-7143-480A-A374-4C2D08A208F5}</Project>
+      <Name>ShiftManagementHelper.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

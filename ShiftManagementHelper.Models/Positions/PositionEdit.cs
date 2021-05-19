@@ -5,15 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ShiftManagementHelper.Data
+namespace ShiftManagementHelper.Models.Positions
 {
-    public class Position
+    public class PositionEdit
     {
-        [Key]
+        [Display(Name = "Position Id")]
         public int PositionId { get; set; }
-        [Required]
+        [Display(Name = "Job Position Name")]
         public string PositionName { get; set; }
-        public Guid OwnerId { get; set; }
         public string Notes { get; set; }
+
     }
 }

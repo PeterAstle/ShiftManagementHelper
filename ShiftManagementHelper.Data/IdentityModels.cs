@@ -5,6 +5,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
+using ShiftManagementHelper.Data;
 
 namespace ShiftManagementHelper.WebMVC.Data
 {
@@ -32,10 +33,10 @@ namespace ShiftManagementHelper.WebMVC.Data
             return new ApplicationDbContext();
         }
 
-        public DbSet Workers { get; set; }
-        public DbSet Positions { get; set; }
-        public DbSet PositionAssignments { get; set; }
-        public DbSet Shifts { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<Position> Positions { get; set; }
+        public DbSet<PositionAssignment> PositionAssignments { get; set; }
+        public DbSet<Shift> Shifts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
