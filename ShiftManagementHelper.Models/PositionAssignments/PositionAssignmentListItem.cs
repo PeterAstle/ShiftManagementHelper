@@ -10,9 +10,10 @@ namespace ShiftManagementHelper.Models.PositionAssignments
    public class PositionAssignmentListItem
     {
         public int PositionAssignmentId { get; set; }
-        public int PositionId { get; set; }
+        public int? PositionId { get; set; }
         //public virtual Position Position { get; set; }
-        public int WorkerId { get; set; }
+        public int? WorkerId { get; set; }
+        public int? ShiftId { get; set; }
         //public virtual Worker Worker { get; set; }
         public string Notes { get; set; }
     }

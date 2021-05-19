@@ -21,6 +21,9 @@
             @Html.DisplayNameFor(model => model.WorkerId)
         </th>
         <th>
+            @Html.DisplayNameFor(model => model.ShiftId)
+        </th>
+        <th>
             @Html.DisplayNameFor(model => model.Notes)
         </th>
         <th></th>
@@ -38,12 +41,15 @@
             @Html.DisplayFor(modelItem => item.WorkerId)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => item.ShiftId)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Notes)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.PositionAssignmentId }) |
+            @Html.ActionLink("Edit", "Edit", new { id=item.PositionAssignmentId }) |
             @Html.ActionLink("Details", "Details", new { id = item.PositionAssignmentId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.PositionAssignmentId })
+            @Html.ActionLink("Delete", "Delete", new {  id = item.PositionAssignmentId })
         </td>
     </tr>
 }

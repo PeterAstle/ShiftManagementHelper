@@ -23,22 +23,28 @@ namespace ShiftManagementHelper.Services
 
             using (var ctx = new ApplicationDbContext())
             {
-            var entity =
-                new PositionAssignment()
-                {
-                    OwnerId = _userId,
-                    PositionId = model.PositionId,
-                    Position = 
-                    ctx
-                    .Positions
-                    .FirstOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId),
-                    WorkerId = model.WorkerId,
-                    Worker =
-                    ctx
-                    .Workers
-                    .FirstOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId),
-                    Notes = model.Notes
-                };
+                var entity =
+                    new PositionAssignment()
+                    {
+                        OwnerId = _userId,
+                        PositionId = model.PositionId,
+                        Position =
+                        ctx
+                        .Positions
+                        .FirstOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId),
+                        WorkerId = model.WorkerId,
+                        Worker =
+                        ctx
+                        .Workers
+                        .FirstOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId),
+                        Notes = model.Notes,
+                        ShiftId = model.ShiftId,
+                        Shift =
+                        ctx
+                        .Shifts
+                        .FirstOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId)
+
+                    };
                 ctx.PositionAssignments.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
@@ -59,6 +65,7 @@ namespace ShiftManagementHelper.Services
                             PositionAssignmentId = e.PositionAssignmentId,
                             PositionId = e.PositionId,
                             WorkerId = e.WorkerId,
+                            ShiftId = e.ShiftId,
                             Notes = e.Notes
                         }
                         );
@@ -82,6 +89,7 @@ namespace ShiftManagementHelper.Services
                         PositionAssignmentId = entity.PositionAssignmentId,
                         PositionId = entity.PositionId,
                         WorkerId = entity.WorkerId,
+                        ShiftId = entity.ShiftId,
                         Notes = entity.Notes
                     };
 
@@ -100,16 +108,22 @@ namespace ShiftManagementHelper.Services
                 entity.PositionAssignmentId = model.PositionAssignmentId;
                 entity.PositionId = model.PositionId;
                 entity.WorkerId = model.WorkerId;
+                entity.ShiftId = model.ShiftId;
                 entity.Notes = model.Notes;
 
-               entity.Position =
-                    ctx
-                    .Positions
-                    .FirstOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId);
+                entity.Position =
+                     ctx
+                     .Positions
+                     .FirstOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId);
                 entity.Worker =
                    ctx
                    .Workers
                    .FirstOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId);
+
+                entity.Shift =
+                ctx
+                .Shifts
+                .FirstOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId);
 
 
                 return ctx.SaveChanges() == 1;

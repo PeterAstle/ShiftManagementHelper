@@ -248,15 +248,19 @@
     <Content Include="Views\Position\Details.cshtml" />
     <Content Include="Views\Position\Edit.cshtml" />
     <Content Include="Views\Position\Delete.cshtml" />
-    <Content Include="Views\PositionAssignment\Index.cshtml" />
+    <Content Include="Views\Shift\Index.cshtml" />
+    <Content Include="Views\Shift\Create.cshtml" />
+    <Content Include="Views\Shift\Details.cshtml" />
+    <Content Include="Views\Shift\Edit.cshtml" />
+    <Content Include="Views\Shift\Delete.cshtml" />
     <Content Include="Views\PositionAssignment\Create.cshtml" />
+    <Content Include="Views\PositionAssignment\Index.cshtml" />
     <Content Include="Views\PositionAssignment\Details.cshtml" />
     <Content Include="Views\PositionAssignment\Edit.cshtml" />
     <Content Include="Views\PositionAssignment\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Shift\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
