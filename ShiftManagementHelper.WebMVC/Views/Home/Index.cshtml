@@ -2,30 +2,64 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="jumbotron" id="mission">
+    <h1 class="missionsummarytitle">Our Mission:</h1>
+    <p>We're seeking to deliver a powerful and easily implementable tool to assist managers, business owners, and HR departments alike. Aiming to reduce monotony and waste in worker and shift organization in order to increase production efficiency.</p>
+    <br />
+    </div>
+<div id="missionSummaryDiv">
+    <br />
+    <h2 class="missionsummarytitle">Simply Put:</h2>
+    <br />
+    <p id="missionsummary">
+        Shift Management Helper is an application through which users can create custom workers, positions, and shifts. Each of these objects can then be linked together through the creation of a Shift Assignment, which captures and stores which worker performed or will perform which job for which shift. All of these objects will only be accessible to their creator and contain no sensitive information regarding your business or any indvidual.
+    </p>
+    <br />
+    <p>Read more about the why behind this product's origin and its purpose.</p>
+    <button>
+    @Html.ActionLink("Click to learn more!", "About", "Home")
+    </button>
+    <br />
+    <br />
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
+    <div class="col-md-3 homeTileA">
+        <h2>Workers</h2>
         <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
+            This area allows for users to add unique workers into the database, storing information about these workers, which the user will be able to access, modify, delete, and manipulate in relation to our other objects.
         </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+        <button>
+            @Html.ActionLink("Click to get started!", "Index", "Worker")
+        </button>
+        <br />
+        <br />
     </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    <div class="col-md-3 homeTileB">
+        <h2>Positions</h2>
+        <p>This area allows for users to add unique jobs into the database, storing information about these positions, which the user will be able to access, modify, delete, and manipulate in relation to our other objects.</p>
+        <button>
+            @Html.ActionLink("Click to get started!", "Index", "Position")
+        </button>
+        <br />
+        <br />
     </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+    <div class="col-md-3 homeTileA">
+        <h2>Shifts</h2>
+        <p>This area allows for users to add unique shifts into the database, storing information about these shifts, which the user will be able to access, modify, delete, and manipulate in relation to our other objects.</p>
+        <button>
+            @Html.ActionLink("Click to get started!", "Index", "Shift")
+        </button>
+        <br />
+        <br />
+    </div>
+    <div class="col-md-3 homeTileB">
+        <h2>Shift Assignments</h2>
+        <p>This area allows for users to add unique workers into the shift assignments, which is where the user can link all other objects together; affording the ability to assign a specified worker to a specified position for a specified shift. The user will maintain the same functionality for these objects as well, allowing for accessing, modification, and deleting of shift assignments.</p>
+        <button>
+            @Html.ActionLink("Click to get started!", "Index", "PositionAssignment")
+        </button>
+        <br />
+        <br />
     </div>
 </div>

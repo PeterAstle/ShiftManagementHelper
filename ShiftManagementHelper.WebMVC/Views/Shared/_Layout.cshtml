@@ -8,10 +8,15 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<div id="banner">
-    <img src="D:\Peter\ElevenFiftyProjects\DoNetProjects\SMH\ShiftManagementHelper\SMH_Logo.png" class="col-md-2" id="logo"/>
+<header id="banner">
+    <div>
+        <a><img src="https://i.imgur.com/UkNrh71.png" title="source: imgur.com" id="logo" class="col-md-1" /></a>
+    </div>
+    <div id="homeLink" class="col-md-offset-1">
+        @Html.ActionLink("Shift Management Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @id = "mainTitle" })
+    </div>
     @Html.Partial("_LoginPartial")
-</div>
+</header>
 <body>
     <div class="navbar navbar-inverse" id="menubar">
         <div class="container">
@@ -21,7 +26,6 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Shift Management Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse" id="layoutmenu">
                 <ul class="nav navbar-nav">
@@ -33,18 +37,15 @@
             </div>
         </div>
     </div>
-    <div id="trialdiv">
-
-    </div>
     <div>
-        <div class="container body-content" id="sharedbody">
+        <div class="container body-content col-md-offset-1 col-md-10" id="sharedbody">
             @RenderBody()
             <hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Created by Peter Astle</p>
+    </footer>
         </div>
     </div>
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Created by Peter Astle</p>
-        </footer>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
