@@ -8,8 +8,12 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
+<div id="banner">
+    <img src="D:\Peter\ElevenFiftyProjects\DoNetProjects\SMH\ShiftManagementHelper\SMH_Logo.png" class="col-md-2" id="logo"/>
+    @Html.Partial("_LoginPartial")
+</div>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse" id="menubar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -19,27 +23,33 @@
                 </button>
                 @Html.ActionLink("Shift Management Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" id="layoutmenu">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Workers", "Index", "Worker")</li>
                     <li>@Html.ActionLink("Positions", "Index", "Position")</li>
                     <li>@Html.ActionLink("Shifts", "Index", "Shift")</li>
                     <li>@Html.ActionLink("Shift Assignments", "Index", "PositionAssignment")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
+    <div id="trialdiv">
+
+    </div>
+    <div>
+        <div class="container body-content" id="sharedbody">
+            @RenderBody()
+            <hr />
+        </div>
+    </div>
         <footer>
             <p>&copy; @DateTime.Now.Year - Created by Peter Astle</p>
         </footer>
-    </div>
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+

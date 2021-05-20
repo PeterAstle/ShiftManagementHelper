@@ -1,12 +1,42 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+    background-color: #2f2f2ffa;
 }
+
+footer{
+    position: fixed;
+    bottom: 0px;
+    right: 10px;
+  
+}
+
+#logintext{
+   color: white;
+}
+
+#logouttext{
+    color: white;
+}
+
+#logouttext:hover{
+    color: black;
+}
+
+#logintext:hover{
+    color: black;
+}
+
+#logo{
+    
+}
+
 
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
     padding-right: 15px;
+    background-color: whitesmoke;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -21,4 +51,27 @@ input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#banner {
+    background-color: #4e0000;
+    height: 134px;
+    position: static;
+    margin-top: -50px;
+}
+
+#logIn{
+    background-color: transparent;
+    padding-right: 5px;
+}
+#menubar {
+    background-color: black;
+}
+
+#trialdiv{
+    height: 200px;
+}
+
+#layoutmenu{
+    float: right;
 }
