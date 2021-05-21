@@ -9,49 +9,57 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table indexTable">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.PositionAssignmentId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.PositionId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkerId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShiftId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Notes)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.PositionAssignmentId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.PositionId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkerId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShiftId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Notes)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.PositionAssignmentId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.PositionAssignmentId }) |
-            @Html.ActionLink("Delete", "Delete", new {  id = item.PositionAssignmentId })
-        </td>
-    </tr>
-}
+<table id="pa_table" class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PositionAssignmentId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PositionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkerId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShiftId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Notes)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositionAssignmentId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.PositionId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkerId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShiftId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Notes)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.PositionAssignmentId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.PositionAssignmentId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.PositionAssignmentId })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+<script type="text/javascript">
+$(document).ready(function () {
+        $('#pa_table').DataTable();
+    });</script>

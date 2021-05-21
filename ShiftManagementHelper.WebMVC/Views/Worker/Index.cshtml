@@ -4,48 +4,53 @@
     ViewBag.Title = "Index";
 }
 
+
 <h2 class="indexHeader">Worker Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table indexTable">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkerId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkerFirstName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.WorkerLastName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Role)
-        </th>
-        <th></th>
-    </tr>
+@*<table id="myTable" class="display indexTable table">*@
+<table id="table_id" class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkerFirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkerLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Role)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkerId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkerFirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.WorkerLastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Role)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.WorkerId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.WorkerId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.WorkerId })
-        </td>
-    </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+               <td>
+                    @Html.DisplayFor(modelItem => item.WorkerFirstName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.WorkerLastName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.WorkerId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.WorkerId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.WorkerId })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+<script type="text/javascript">$(document).ready(function () {
+        $('#table_id').DataTable();
+    });</script>

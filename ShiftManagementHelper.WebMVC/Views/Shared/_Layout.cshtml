@@ -4,8 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Shift Management Helper</title>
+    @Scripts.Render("~/bundles/jquery")
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
 
 </head>
 <header id="banner">
@@ -41,13 +45,11 @@
         <div class="container body-content col-md-offset-1 col-md-10" id="sharedbody">
             @RenderBody()
             <hr />
-    <footer>
-        <p>&copy; @DateTime.Now.Year - Created by Peter Astle</p>
-    </footer>
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Created by Peter Astle</p>
+            </footer>
         </div>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
