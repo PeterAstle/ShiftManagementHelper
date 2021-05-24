@@ -27,22 +27,19 @@ namespace ShiftManagementHelper.Services
                     new PositionAssignment()
                     {
                         OwnerId = _userId,
-                        PositionId = model.PositionId,
-                        Position =
+                        PositionId =
                         ctx
                         .Positions
-                        .FirstOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId),
-                        WorkerId = model.WorkerId,
-                        Worker =
+                        .FirstOrDefault(e => e.OwnerId == _userId).PositionId,
+                        WorkerId =
                         ctx
                         .Workers
-                        .FirstOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId),
+                        .FirstOrDefault(e => e.OwnerId == _userId).WorkerId,
                         Notes = model.Notes,
-                        ShiftId = model.ShiftId,
-                        Shift =
+                        ShiftId =
                         ctx
                         .Shifts
-                        .FirstOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId)
+                        .FirstOrDefault(e => e.OwnerId == _userId).ShiftId
 
                     };
                 ctx.PositionAssignments.Add(entity);

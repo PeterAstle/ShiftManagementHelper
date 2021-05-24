@@ -4,12 +4,27 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Shift Management Helper</title>
+    @Scripts.Render("~/bundles/jquery")
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @*<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">*@
+
+    <link rel="stylesheet" type="text/css" href="~/Content/DataTables.css" />
 
 </head>
+<header id="banner">
+    <div>
+        <a><img src="https://i.imgur.com/UkNrh71.png" title="source: imgur.com" id="logo" class="col-md-1" /></a>
+    </div>
+    <div id="homeLink" class="col-md-offset-1">
+        @Html.ActionLink("Shift Management Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand", @id = "mainTitle" })
+    </div>
+    @Html.Partial("_LoginPartial")
+</header>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar navbar-inverse" id="menubar">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -17,29 +32,29 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Shift Management Helper", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse" id="layoutmenu">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Workers", "Index", "Worker")</li>
                     <li>@Html.ActionLink("Positions", "Index", "Position")</li>
                     <li>@Html.ActionLink("Shifts", "Index", "Shift")</li>
                     <li>@Html.ActionLink("Shift Assignments", "Index", "PositionAssignment")</li>
                 </ul>
-                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Created by Peter Astle</p>
-        </footer>
+    <div>
+        <div class="container body-content col-md-offset-1 col-md-10" id="sharedbody">
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Created by Peter Astle</p>
+            </footer>
+        </div>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
+
+

@@ -4,42 +4,53 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2 class="indexHeader">Shift Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.ShiftId)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.ShiftName)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Date)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShiftId)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.ShiftName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Date)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ShiftId }) |
-            @Html.ActionLink("Details", "Details", new { id = item.ShiftId }) |
-            @Html.ActionLink("Delete", "Delete", new { id = item.ShiftId })
-        </td>
-    </tr>
-}
+<table id="shift_table" class="display">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ShiftId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShiftName)
+            </th>
+            <th >
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                Available Actions
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShiftId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ShiftName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ShiftId }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ShiftId }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ShiftId })
+                </td>
+            </tr>
+        }
+    </tbody>
 
 </table>
+
+<script type="text/javascript">
+$(document).ready(function () {
+        $('#shift_table').DataTable();
+    });</script>
