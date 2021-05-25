@@ -114,6 +114,34 @@ namespace ShiftManagementHelper.Services
                     .PositionAssignments
                     .SingleOrDefault(e => e.PositionAssignmentId == model.PositionAssignmentId && e.OwnerId == _userId);
 
+                if (entity.WorkerId != model.WorkerId)
+                {
+                    var worker = ctx.Workers.SingleOrDefault(w => w.WorkerId == entity.WorkerId && w.OwnerId == _userId);
+                    worker.Worker_PositionAssignments.Remove(entity);
+
+                    var newWorker = ctx.Workers.SingleOrDefault(w => w.WorkerId == model.WorkerId && w.OwnerId == _userId);
+                    newWorker.Worker_PositionAssignments.Add(entity);
+                }
+
+                if (entity.PositionId != model.PositionId)
+                {
+                    var position = ctx.Positions.SingleOrDefault(w => w.PositionId == entity.PositionId && w.OwnerId == _userId);
+                    position.Position_PositionAssignments.Remove(entity);
+
+                    var newPosition = ctx.Positions.SingleOrDefault(w => w.PositionId == model.PositionId && w.OwnerId == _userId);
+                    newPosition.Position_PositionAssignments.Add(entity);
+                }
+
+                if (entity.ShiftId != model.ShiftId)
+                {
+                    var shift = ctx.Shifts.SingleOrDefault(w => w.ShiftId == entity.ShiftId && w.OwnerId == _userId);
+                    shift.Shift_PositionAssignments.Remove(entity);
+
+                    var newShift = ctx.Shifts.SingleOrDefault(w => w.ShiftId == model.ShiftId && w.OwnerId == _userId);
+                    newShift.Shift_PositionAssignments.Add(entity);
+                }
+
+
                 entity.PositionAssignmentId = model.PositionAssignmentId;
                 entity.PositionId = model.PositionId;
                 entity.WorkerId = model.WorkerId;
@@ -133,6 +161,7 @@ namespace ShiftManagementHelper.Services
                 ctx
                 .Shifts
                 .SingleOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId);
+
 
 
                 return ctx.SaveChanges() == 1;

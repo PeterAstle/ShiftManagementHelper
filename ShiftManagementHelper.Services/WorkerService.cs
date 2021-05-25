@@ -53,9 +53,11 @@ namespace ShiftManagementHelper.Services
                            WorkerId = e.WorkerId,
                            WorkerFirstName = e.WorkerFirstName,
                            WorkerLastName = e.WorkerLastName,
-                           Role = e.Role
+                           Role = e.Role,
                        }
                         );
+
+
                 return query.ToArray();
 
             }
@@ -78,7 +80,8 @@ namespace ShiftManagementHelper.Services
                         WorkerLastName = entity.WorkerLastName,
                         EmploymentStartDate = entity.EmploymentStartDate,
                         Role = entity.Role,
-                        Notes = entity.Notes
+                        Notes = entity.Notes,
+                        Worker_PositionAssignments = entity.Worker_PositionAssignments
                     };
             }
         }
