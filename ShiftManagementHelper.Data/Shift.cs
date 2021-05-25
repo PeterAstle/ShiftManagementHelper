@@ -18,7 +18,7 @@ namespace ShiftManagementHelper.Data
         public Guid OwnerId { get; set; }
         //[ForeignKey(nameof(PositionAssignments))]
         //public List<int> PositionAssignmentIds { get; set; } = new List<int>();
-        public virtual List<PositionAssignment> PositionAssignments {
+        public virtual List<PositionAssignment> Shift_PositionAssignments {
             get; } = new List<PositionAssignment>();
         public DateTimeOffset Date { get; set; }
         public string Notes { get; set; }

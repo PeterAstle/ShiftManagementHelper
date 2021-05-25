@@ -27,22 +27,34 @@ namespace ShiftManagementHelper.Services
                     new PositionAssignment()
                     {
                         OwnerId = _userId,
-                        PositionId =
-                        ctx
-                        .Positions
-                        .FirstOrDefault(e => e.OwnerId == _userId).PositionId,
-                        WorkerId =
-                        ctx
-                        .Workers
-                        .FirstOrDefault(e => e.OwnerId == _userId).WorkerId,
-                        Notes = model.Notes,
-                        ShiftId =
-                        ctx
-                        .Shifts
-                        .FirstOrDefault(e => e.OwnerId == _userId).ShiftId
+                        PositionId = model.PositionId,
+                        WorkerId = model.WorkerId,
+                        ShiftId = model.ShiftId,
+                        Notes = model.Notes
 
                     };
                 ctx.PositionAssignments.Add(entity);
+
+                if (entity.WorkerId != null)
+                {
+                    var worker = ctx.Workers.SingleOrDefault(w => w.WorkerId == entity.WorkerId && w.OwnerId == _userId);
+                    worker.Worker_PositionAssignments.Add(entity);
+                }
+
+                if (entity.ShiftId != null)
+                {
+                    var shift = ctx.Shifts.SingleOrDefault(w => w.ShiftId == entity.ShiftId && w.OwnerId == _userId);
+                    shift.Shift_PositionAssignments.Add(entity);
+                }
+
+                if (entity.PositionId != null)
+                {
+                    var position = ctx.Positions.SingleOrDefault(w => w.PositionId == entity.PositionId && w.OwnerId == _userId);
+                    position.Position_PositionAssignments.Add(entity);
+                }
+
+
+
                 return ctx.SaveChanges() == 1;
             }
         }
@@ -78,7 +90,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .PositionAssignments
-                    .FirstOrDefault(e => e.PositionAssignmentId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.PositionAssignmentId == id && e.OwnerId == _userId);
 
                 return
                     new PositionAssignmentDetail
@@ -100,7 +112,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .PositionAssignments
-                    .FirstOrDefault(e => e.PositionAssignmentId == model.PositionAssignmentId && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.PositionAssignmentId == model.PositionAssignmentId && e.OwnerId == _userId);
 
                 entity.PositionAssignmentId = model.PositionAssignmentId;
                 entity.PositionId = model.PositionId;
@@ -111,16 +123,16 @@ namespace ShiftManagementHelper.Services
                 entity.Position =
                      ctx
                      .Positions
-                     .FirstOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId);
+                     .SingleOrDefault(e => e.PositionId == model.PositionId && e.OwnerId == _userId);
                 entity.Worker =
                    ctx
                    .Workers
-                   .FirstOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId);
+                   .SingleOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId);
 
                 entity.Shift =
                 ctx
                 .Shifts
-                .FirstOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId);
+                .SingleOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId);
 
 
                 return ctx.SaveChanges() == 1;
@@ -134,7 +146,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .PositionAssignments
-                    .FirstOrDefault(e => e.PositionAssignmentId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.PositionAssignmentId == id && e.OwnerId == _userId);
 
                 ctx.PositionAssignments.Remove(entity);
                 return ctx.SaveChanges() == 1;

@@ -71,7 +71,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Shifts
-                    .FirstOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
 
                 return
                     new ShiftDetail
@@ -91,7 +91,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Shifts
-                    .FirstOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId);
 
                 entity.ShiftName = model.ShiftName;
                 entity.Date = model.Date;
@@ -110,7 +110,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Shifts
-                    .FirstOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
 
                 ctx.Shifts.Remove(entity);
                 return ctx.SaveChanges() == 1;

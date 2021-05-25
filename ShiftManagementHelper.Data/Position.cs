@@ -15,5 +15,7 @@ namespace ShiftManagementHelper.Data
         public string PositionName { get; set; }
         public Guid OwnerId { get; set; }
         public string Notes { get; set; }
+
+        public virtual List<PositionAssignment> Position_PositionAssignments { get; set; } = new List<PositionAssignment>();
     }
 }

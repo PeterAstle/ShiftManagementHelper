@@ -15,7 +15,7 @@ namespace ShiftManagementHelper.Models.Shifts
         [Display(Name = "Shift Name")]
         public string ShiftName { get; set; }
         //public virtual List<int> PositionAssignmentIds { get; set; } = new List<int>();
-        //public virtual List<PositionAssignment> PositionAssignments { get; set; } = new List<PositionAssignment>();
+        public virtual List<PositionAssignment> Shift_PositionAssignments { get; set; } = new List<PositionAssignment>();
 
         public DateTimeOffset Date { get; set; }
 

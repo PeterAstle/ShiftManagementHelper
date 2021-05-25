@@ -63,7 +63,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Positions
-                    .Single(e => e.OwnerId == _userId && e.PositionId == id);
+                    .SingleOrDefault(e => e.OwnerId == _userId && e.PositionId == id);
 
                 return
                     new PositionDetail
@@ -98,7 +98,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Positions
-                    .Single(e => e.OwnerId == _userId && e.PositionId == id);
+                    .SingleOrDefault(e => e.OwnerId == _userId && e.PositionId == id);
 
                 ctx.Positions.Remove(entity);
                 return ctx.SaveChanges() == 1;

@@ -68,7 +68,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Workers
-                    .Single(e => e.WorkerId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.WorkerId == id && e.OwnerId == _userId);
 
                 return
                     new WorkerDetail
@@ -93,7 +93,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                      ctx
                      .Workers
-                     .Single(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId);
+                     .SingleOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId);
 
                 entity.WorkerFirstName = model.WorkerFirstName;
                 entity.WorkerLastName = model.WorkerLastName;
@@ -113,7 +113,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Workers
-                    .Single(e => e.WorkerId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.WorkerId == id && e.OwnerId == _userId);
 
                 ctx.Workers.Remove(entity);
                 return ctx.SaveChanges() == 1;
