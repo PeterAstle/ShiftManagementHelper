@@ -72,6 +72,21 @@ namespace ShiftManagementHelper.Services
                     .Workers
                     .SingleOrDefault(e => e.WorkerId == id && e.OwnerId == _userId);
 
+                List<string> shifts = new List<string>();
+                List<string> positions = new List<string>();
+
+                foreach (var item in entity.Worker_PositionAssignments)
+                {
+                    shifts.Add($"{item.Shift.ShiftName} ");
+                }
+
+                foreach (var item in entity.Worker_PositionAssignments)
+                {
+
+                    positions.Add($"{item.Position.PositionName} ");
+                }
+
+
                 return
                     new WorkerDetail
                     {
@@ -81,7 +96,9 @@ namespace ShiftManagementHelper.Services
                         EmploymentStartDate = entity.EmploymentStartDate,
                         Role = entity.Role,
                         Notes = entity.Notes,
-                        Worker_PositionAssignments = entity.Worker_PositionAssignments
+                        Worker_PositionAssignments = entity.Worker_PositionAssignments,
+                        ShiftNames = shifts,
+                        PositionNames = positions
                     };
             }
         }

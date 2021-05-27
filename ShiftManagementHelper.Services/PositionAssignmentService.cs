@@ -75,7 +75,12 @@ namespace ShiftManagementHelper.Services
                             PositionId = e.PositionId,
                             WorkerId = e.WorkerId,
                             ShiftId = e.ShiftId,
-                            Notes = e.Notes
+                            Notes = e.Notes,
+                            ShiftName = e.Shift.ShiftName,
+                            ShiftDate = e.Shift.Date,
+                            WorkerFirstName = e.Worker.WorkerFirstName,
+                            WorkerLastName = e.Worker.WorkerLastName,
+                            PositionName = e.Position.PositionName
                         }
                         );
                 return query.ToArray();
@@ -182,7 +187,6 @@ namespace ShiftManagementHelper.Services
 
             }
         }
-
 
     }
 }

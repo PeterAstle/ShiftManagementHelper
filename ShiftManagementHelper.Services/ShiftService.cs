@@ -73,6 +73,8 @@ namespace ShiftManagementHelper.Services
                     .Shifts
                     .SingleOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
 
+
+
                 return
                     new ShiftDetail
                     {

@@ -12,18 +12,39 @@
 <table id="pa_table" class="display">
     <thead>
         <tr>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(model => model.PositionAssignmentId)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(model => model.PositionId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PositionName)
+
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.WorkerId)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.WorkerFirstName)
+
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkerLastName)
+
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.ShiftId)
             </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.ShiftName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ShiftDate)
+
+            </th>
+
             <th>
                 @Html.DisplayNameFor(model => model.Notes)
             </th>
@@ -33,28 +54,44 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PositionAssignmentId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.PositionId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WorkerId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ShiftId)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Notes)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.PositionAssignmentId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.PositionAssignmentId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.PositionAssignmentId })
-                </td>
-            </tr>
+        <tr>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.PositionAssignmentId)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PositionName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkerFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkerLastName)
+
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShiftId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShiftName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ShiftDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Notes)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.PositionAssignmentId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.PositionAssignmentId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.PositionAssignmentId })
+            </td>
+        </tr>
         }
     </tbody>
 

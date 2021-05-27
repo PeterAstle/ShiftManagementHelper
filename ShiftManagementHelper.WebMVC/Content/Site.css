@@ -160,10 +160,35 @@ textarea {
 
 h2{
     font-family: 'Ink Free';
+    color: whitesmoke;
 }
 a{
     color: whitesmoke;
 }
 a:hover{
     color: crimson;
+}
+
+dt{
+    color: whitesmoke;
+}
+dd{
+    color: whitesmoke;
+}
+
+h4{
+    color: whitesmoke;
+}
+
+#workerpositions{
+    display: inline-block;
+}
+
+th {
+    width: 100px;
+    text-align: center;
+}
+td {
+    width: 100px;
+    text-align: center;
 }

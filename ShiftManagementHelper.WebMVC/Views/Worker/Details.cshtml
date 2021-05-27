@@ -56,16 +56,39 @@
             @Html.DisplayFor(model => model.Worker_PositionAssignments.Count)
 
         </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.ShiftNames)
+        </dt>
+        
+            <dd>
+                @Html.DisplayFor(model => model.ShiftNames)
+            </dd>
+        
 
-        @*@foreach (var item in Model.Worker_PositionAssignments)
-        {
-            @Html.DisplayFor(modelItem => item.Position.PositionName)
-            @Html.DisplayFor(modelItem => item.Shift.ShiftName)
-            @Html.DisplayFor(modelItem => item.Shift.Date)
-        }*@
+        <dt>
+            @Html.DisplayNameFor(model => model.PositionNames)
+        </dt>
+      
+            <dd id="workerpositions">
+                @Html.DisplayFor(model => model.PositionNames)
+            </dd>
+        
+
+        @*<dt>
+            @Html.DisplayNameFor(modelItem => modelItem.Worker_PositionAssignments)
+        </dt>
+        <dd>
+
+            @foreach (var item in Model.Worker_PositionAssignments)
+                {
+                    @Html.DisplayFor(modelItem => item.Position.PositionName)
+                    @Html.DisplayFor(modelItem => item.Shift.ShiftName)
+                    @Html.DisplayFor(modelItem => item.Shift.Date)
+                }
+        </dd>*@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new {  id = Model.WorkerId  }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.WorkerId }) |
     @Html.ActionLink("Back to List", "Index")
 </p>
