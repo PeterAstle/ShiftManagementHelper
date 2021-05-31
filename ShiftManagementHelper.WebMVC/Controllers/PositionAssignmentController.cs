@@ -85,6 +85,7 @@ namespace ShiftManagementHelper.WebMVC.Controllers
                 {
                     PositionAssignmentId = detail.PositionAssignmentId,
                     PositionId = detail.PositionAssignmentId,
+                    ShiftId = detail.ShiftId,
                     WorkerId = detail.WorkerId,
                     Notes = detail.Notes
                 };
