@@ -33,6 +33,11 @@ footer p{
     color: black;
 }
 
+#Signintext {
+
+}
+
+
 #logo {
     
     position: relative;
@@ -80,6 +85,14 @@ textarea {
     background-color: transparent;
     padding-right: 5px;
 }
+
+#logInInfo {
+    background-color: transparent;
+    padding-right: 5px;
+    position: relative;
+    right: -50%;
+}
+
 #menubar {
     background-color: black;
 }

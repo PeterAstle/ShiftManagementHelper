@@ -77,13 +77,13 @@ namespace ShiftManagementHelper.Services
 
                 foreach (var item in entity.Worker_PositionAssignments)
                 {
-                    shifts.Add($"{item.Shift.ShiftName} ");
+                    shifts.Add($"{item.Shift.ShiftName} |  ");
                 }
 
                 foreach (var item in entity.Worker_PositionAssignments)
                 {
 
-                    positions.Add($"{item.Position.PositionName} ");
+                    positions.Add($"{item.Position.PositionName} | ");
                 }
 
 
