@@ -10,10 +10,13 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-@*<table id="myTable" class="display indexTable table">*@
+
 <table id="table_id" class="display">
     <thead>
         <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.WorkerId)
+            </th>
             <th>
                 @Html.DisplayNameFor(model => model.WorkerFirstName)
             </th>
@@ -30,22 +33,25 @@
 
         @foreach (var item in Model)
         {
-            <tr>
-               <td>
-                    @Html.DisplayFor(modelItem => item.WorkerFirstName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.WorkerLastName)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Role)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.WorkerId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.WorkerId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.WorkerId })
-                </td>
-            </tr>
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkerId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkerFirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.WorkerLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Role)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.WorkerId }) |
+                @Html.ActionLink("Details", "Details", new { id = item.WorkerId }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.WorkerId })
+            </td>
+        </tr>
         }
     </tbody>
 
