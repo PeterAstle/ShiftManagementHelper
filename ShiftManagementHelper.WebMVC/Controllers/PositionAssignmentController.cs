@@ -84,7 +84,7 @@ namespace ShiftManagementHelper.WebMVC.Controllers
                 new PositionAssignmentEdit
                 {
                     PositionAssignmentId = detail.PositionAssignmentId,
-                    PositionId = detail.PositionAssignmentId,
+                    PositionId = detail.PositionId,
                     ShiftId = detail.ShiftId,
                     WorkerId = detail.WorkerId,
                     Notes = detail.Notes

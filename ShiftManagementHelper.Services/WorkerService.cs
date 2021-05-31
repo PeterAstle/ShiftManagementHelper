@@ -139,17 +139,6 @@ namespace ShiftManagementHelper.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-
-        //private TimeSpan TimeServed(DateTimeOffset date)
-        //{
-        //    TimeSpan lengthOfTime = DateTimeOffset.Now - date;
-        //    return lengthOfTime;
-        //}
-
-        //private string ConnectNames(string firstName, string lastName)
-        //{
-        //    string FullName = $"{firstName} {lastName}";
-        //    return FullName;
-        //}
+             
     }
 }
