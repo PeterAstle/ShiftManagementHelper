@@ -15,11 +15,17 @@ namespace ShiftManagementHelper.Models.Shifts
         [Display(Name = "Shift Name")]
         public string ShiftName { get; set; }
        
-        public virtual List<PositionAssignment> PositionAssignments { get; } = new List<PositionAssignment>();
+        public List<PositionAssignment> PositionAssignments { get; set; } = new List<PositionAssignment>();
 
 
         public DateTimeOffset Date { get; set; }
 
         public string Notes { get; set; }
+        [Display(Name = "Associated Workers")]
+
+        public List<string> WorkerNames { get; set; } = new List<string>();
+        [Display(Name = "Associated Positions")]
+
+        public List<string> PositionNames { get; set; } = new List<string>();
     }
 }

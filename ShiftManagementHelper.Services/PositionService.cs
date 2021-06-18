@@ -63,14 +63,31 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Positions
-                    .Single(e => e.OwnerId == _userId && e.PositionId == id);
+                    .SingleOrDefault(e => e.OwnerId == _userId && e.PositionId == id);
+
+                List<string> shifts = new List<string>();
+                List<string> workers = new List<string>();
+
+                foreach (var item in entity.Position_PositionAssignments)
+                {
+                    shifts.Add($"{item.Shift.ShiftName} |  ");
+                }
+
+                foreach (var item in entity.Position_PositionAssignments)
+                {
+
+                    workers.Add($"{item.Worker.WorkerFirstName} {item.Worker.WorkerLastName} |  ");
+                }
 
                 return
                     new PositionDetail
                     {
                         PositionId = entity.PositionId,
                         PositionName = entity.PositionName,
-                        Notes = entity.Notes
+                        Notes = entity.Notes,
+                        PositionAssignments = entity.Position_PositionAssignments,
+                        ShiftNames = shifts,
+                        WorkerNames = workers
                     };
             }
         }
@@ -98,7 +115,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Positions
-                    .Single(e => e.OwnerId == _userId && e.PositionId == id);
+                    .SingleOrDefault(e => e.OwnerId == _userId && e.PositionId == id);
 
                 ctx.Positions.Remove(entity);
                 return ctx.SaveChanges() == 1;

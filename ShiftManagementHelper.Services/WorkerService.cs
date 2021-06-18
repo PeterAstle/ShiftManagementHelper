@@ -53,9 +53,11 @@ namespace ShiftManagementHelper.Services
                            WorkerId = e.WorkerId,
                            WorkerFirstName = e.WorkerFirstName,
                            WorkerLastName = e.WorkerLastName,
-                           Role = e.Role
+                           Role = e.Role,
                        }
                         );
+
+
                 return query.ToArray();
 
             }
@@ -68,7 +70,22 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Workers
-                    .Single(e => e.WorkerId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.WorkerId == id && e.OwnerId == _userId);
+
+                List<string> shifts = new List<string>();
+                List<string> positions = new List<string>();
+
+                foreach (var item in entity.Worker_PositionAssignments)
+                {
+                    shifts.Add($"{item.Shift.ShiftName} |  ");
+                }
+
+                foreach (var item in entity.Worker_PositionAssignments)
+                {
+
+                    positions.Add($"{item.Position.PositionName} | ");
+                }
+
 
                 return
                     new WorkerDetail
@@ -78,7 +95,10 @@ namespace ShiftManagementHelper.Services
                         WorkerLastName = entity.WorkerLastName,
                         EmploymentStartDate = entity.EmploymentStartDate,
                         Role = entity.Role,
-                        Notes = entity.Notes
+                        Notes = entity.Notes,
+                        Worker_PositionAssignments = entity.Worker_PositionAssignments,
+                        ShiftNames = shifts,
+                        PositionNames = positions
                     };
             }
         }
@@ -93,7 +113,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                      ctx
                      .Workers
-                     .Single(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId);
+                     .SingleOrDefault(e => e.WorkerId == model.WorkerId && e.OwnerId == _userId);
 
                 entity.WorkerFirstName = model.WorkerFirstName;
                 entity.WorkerLastName = model.WorkerLastName;
@@ -113,23 +133,12 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Workers
-                    .Single(e => e.WorkerId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.WorkerId == id && e.OwnerId == _userId);
 
                 ctx.Workers.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-
-        //private TimeSpan TimeServed(DateTimeOffset date)
-        //{
-        //    TimeSpan lengthOfTime = DateTimeOffset.Now - date;
-        //    return lengthOfTime;
-        //}
-
-        //private string ConnectNames(string firstName, string lastName)
-        //{
-        //    string FullName = $"{firstName} {lastName}";
-        //    return FullName;
-        //}
+             
     }
 }

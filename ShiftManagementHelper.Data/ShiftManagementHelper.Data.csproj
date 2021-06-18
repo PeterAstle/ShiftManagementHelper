@@ -63,6 +63,14 @@
     <Compile Include="Migrations\202105182033567_changedPAProperties.Designer.cs">
       <DependentUpon>202105182033567_changedPAProperties.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202105252001041_improvingDataStructure.cs" />
+    <Compile Include="Migrations\202105252001041_improvingDataStructure.Designer.cs">
+      <DependentUpon>202105252001041_improvingDataStructure.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105252010552_improvingDataStructure1.cs" />
+    <Compile Include="Migrations\202105252010552_improvingDataStructure1.Designer.cs">
+      <DependentUpon>202105252010552_improvingDataStructure1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Position.cs" />
     <Compile Include="PositionAssignment.cs" />
@@ -80,6 +88,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202105182033567_changedPAProperties.resx">
       <DependentUpon>202105182033567_changedPAProperties.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105252001041_improvingDataStructure.resx">
+      <DependentUpon>202105252001041_improvingDataStructure.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105252010552_improvingDataStructure1.resx">
+      <DependentUpon>202105252010552_improvingDataStructure1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

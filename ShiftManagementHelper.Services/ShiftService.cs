@@ -71,7 +71,24 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Shifts
-                    .FirstOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
+
+                List<string> workers = new List<string>();
+                List<string> positions = new List<string>();
+
+                foreach (var item in entity.Shift_PositionAssignments)
+                {
+                    workers.Add($"{item.Worker.WorkerFirstName} {item.Worker.WorkerLastName} | ");
+                }
+
+                foreach (var item in entity.Shift_PositionAssignments)
+                {
+
+                    positions.Add($"{item.Position.PositionName} |  ");
+                }
+
+
+
 
                 return
                     new ShiftDetail
@@ -79,7 +96,10 @@ namespace ShiftManagementHelper.Services
                         ShiftId = entity.ShiftId,
                         ShiftName = entity.ShiftName,
                         Date = entity.Date,
-                        Notes = entity.Notes
+                        Notes = entity.Notes,
+                        PositionAssignments = entity.Shift_PositionAssignments,
+                        WorkerNames = workers,
+                        PositionNames = positions
                     };
             }
         }
@@ -91,7 +111,7 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Shifts
-                    .FirstOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.ShiftId == model.ShiftId && e.OwnerId == _userId);
 
                 entity.ShiftName = model.ShiftName;
                 entity.Date = model.Date;
@@ -110,13 +130,12 @@ namespace ShiftManagementHelper.Services
                 var entity =
                     ctx
                     .Shifts
-                    .FirstOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
+                    .SingleOrDefault(e => e.ShiftId == id && e.OwnerId == _userId);
 
                 ctx.Shifts.Remove(entity);
                 return ctx.SaveChanges() == 1;
             }
         }
-
 
 
     }

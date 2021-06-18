@@ -2,21 +2,21 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron" id="mission">
+<div id="mission">
     <h1 class="missionsummarytitle">Our Mission:</h1>
     <p>We're seeking to deliver a powerful and easily implementable tool to assist managers, business owners, and HR departments alike. Aiming to reduce monotony and waste in worker and shift organization in order to increase production efficiency.</p>
     <br />
     </div>
 <div id="missionSummaryDiv">
     <br />
-    <h2 class="missionsummarytitle">Simply Put:</h2>
+    <h1 class="missionsummarytitle">Simply Put:</h1>
     <br />
-    <p id="missionsummary">
+    <p class="missionsummary">
         Shift Management Helper is an application through which users can create custom workers, positions, and shifts. Each of these objects can then be linked together through the creation of a Shift Assignment, which captures and stores which worker performed or will perform which job for which shift. All of these objects will only be accessible to their creator and contain no sensitive information regarding your business or any indvidual.
     </p>
     <br />
-    <p>Read more about the why behind this product's origin and its purpose.</p>
-    <button>
+    <p class="missionsummary">Read more about the why behind this product's origin and its purpose.</p>
+    <button class="actionButton btn-lg">
     @Html.ActionLink("Click to learn more!", "About", "Home")
     </button>
     <br />
@@ -29,7 +29,7 @@
         <p>
             This area allows for users to add unique workers into the database, storing information about these workers, which the user will be able to access, modify, delete, and manipulate in relation to our other objects.
         </p>
-        <button>
+        <button class="actionButton btn-lg">
             @Html.ActionLink("Click to get started!", "Index", "Worker")
         </button>
         <br />
@@ -38,7 +38,7 @@
     <div class="col-md-3 homeTileB">
         <h2>Positions</h2>
         <p>This area allows for users to add unique jobs into the database, storing information about these positions, which the user will be able to access, modify, delete, and manipulate in relation to our other objects.</p>
-        <button>
+        <button class="actionButton btn-lg">
             @Html.ActionLink("Click to get started!", "Index", "Position")
         </button>
         <br />
@@ -47,7 +47,7 @@
     <div class="col-md-3 homeTileA">
         <h2>Shifts</h2>
         <p>This area allows for users to add unique shifts into the database, storing information about these shifts, which the user will be able to access, modify, delete, and manipulate in relation to our other objects.</p>
-        <button>
+        <button class="actionButton btn-lg">
             @Html.ActionLink("Click to get started!", "Index", "Shift")
         </button>
         <br />
@@ -56,7 +56,7 @@
     <div class="col-md-3 homeTileB">
         <h2>Shift Assignments</h2>
         <p>This area allows for users to add unique workers into the shift assignments, which is where the user can link all other objects together; affording the ability to assign a specified worker to a specified position for a specified shift. The user will maintain the same functionality for these objects as well, allowing for accessing, modification, and deleting of shift assignments.</p>
-        <button>
+        <button class="actionButton btn-lg">
             @Html.ActionLink("Click to get started!", "Index", "PositionAssignment")
         </button>
         <br />

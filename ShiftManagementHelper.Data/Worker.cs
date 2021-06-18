@@ -24,5 +24,6 @@ namespace ShiftManagementHelper.Data
         public WorkerRole Role { get; set; }
         public string Notes { get; set; }
 
+        public virtual List<PositionAssignment> Worker_PositionAssignments { get; set; } = new List<PositionAssignment>();
     }
 }
